@@ -1,13 +1,13 @@
 sparkmaster:
-  image: "farismosman/spark"
-  container_name: sparkmaster
+  image: "farismosman/piospark"
+  container_name: piosparkmaster
   net: "pionetwork"
   ports:
     - "8080:8080"
   command: "/start.sh master"
 
 sparkslave:
-  image: "farismosman/spark"
+  image: "farismosman/piospark"
   net: "pionetwork"
   ports:
     - "8081:8081"
