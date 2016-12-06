@@ -1,11 +1,11 @@
 # README #
 
-This repository contains the scripts needed to create a docker image with the universal recommendation engine. To run the docker container locally, the steps bellow are followed to get docker running (in ubuntu behind proxy):
+This repository contains the scripts needed to create a docker image with the universal recommendation engine. To run the docker container locally, the steps bellow are followed to get docker running in Ubuntu behind proxy (optional):
 
 ### Setting up docker locally ###
 
 * [Install docker](https://docs.docker.com/engine/installation/linux/ubuntulinux/)
-* To be able to run docker daemon with being a superuser (optional), you need to run the following command
+* To be able to run docker daemon without being a superuser (optional), you need to run the following command
 
 ```
 #!shell
@@ -52,7 +52,7 @@ Status: Downloaded newer image for hello-world:latest
 ```
 On Ubuntu >= 15.04 the previous steps might not work since ubuntu uses **systemd** and it might not load the proxy settings on **/etc/default/docker**. To be able to configure the proxy, [follow the steps here](https://docs.docker.com/engine/admin/systemd/#http-proxy).
 
-* By default docker uses google to resolve dns. This might not be permitted on our network and another dns server must be used instead. To find the ip address of the dns server used by you machine, run (ubuntu >= 15.04):
+* By default docker uses google to resolve dns. This might not be permitted on some networks and another dns server must be used instead. To find the ip address of the dns server used, run (ubuntu >= 15.04):
 
 ```
 #!shell
@@ -90,10 +90,10 @@ The output should indicate all the arguments passed to the docker server;
            └─http-proxy.conf, ubuntu.conf
    Active: active (running) since Mon 2016-08-22 10:32:15 SAST; 27ms ago
      Docs: https://docs.docker.com
- Main PID: 25476 (dockerd)
+ Main PID: ***** (dockerd)
    Memory: 1.3G
       CPU: 176ms
    CGroup: /system.slice/docker.service
-           ├─25476 /usr/bin/dockerd -H fd:// --dns *.*.*.* --dns *.*.*.* --dns 8.8.8.8 --dns 8.8.4.4 --insecure-registry registry.domain.com:port
-           └─25483 docker-containerd -l unix:///var/run/docker/libcontainerd/docker-containerd.sock --shim docker-containerd-shim --metrics-interval=0 --start-timeout 2m --state-dir /var/run/docker/lib
+           ├─***** /usr/bin/dockerd -H fd:// --dns *.*.*.* --dns *.*.*.* --dns 8.8.8.8 --dns 8.8.4.4 --insecure-registry registry.com:port
+           └─***** docker-containerd -l unix:///var/run/docker/libcontainerd/docker-containerd.sock --shim docker-containerd-shim --metrics-interval=0 --start-timeout 2m --state-dir /var/run/docker/lib
 ```
