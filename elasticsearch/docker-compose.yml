@@ -1,5 +1,6 @@
-elasticsearch:
+espio:
    image: elasticsearch:1.7.5
    container_name: espio
-   net: "pionetwork"
+   hostname: espio
+   net: pionetwork
    command: "elasticsearch -Des.cluster.name=predictionio -Des.node.master=true -Des.node.data=true"

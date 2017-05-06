@@ -1,0 +1,5 @@
+SPARK_MASTER_IP=sparkmaster
+SPARK_WORKER_PORT 8888
+SPARK_WORKER_WEBUI_PORT 8081
+
+SPARK_WORKER_OPTS=-Dspark.worker.cleanup.enabled=true -Dspark.worker.cleanup.appDataTtl=1800

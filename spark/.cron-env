@@ -1,0 +1,5 @@
+SSH_PASSWD=screencast
+
+SERVICE_NAME=sparkslave
+CRON_COMMAND="/cleanup.sh"
+INTERVAL=30

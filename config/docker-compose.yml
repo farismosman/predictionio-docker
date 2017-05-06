@@ -1,0 +1,5 @@
+config:
+  image: "farismosman/config"
+  container_name: config
+  volumes:
+    - /mnt/config:/etc/config
