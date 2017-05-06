@@ -1,0 +1,4 @@
+cron:
+  image: "farismosman/cron"
+  container_name: cron
+  env_file: .cron-env

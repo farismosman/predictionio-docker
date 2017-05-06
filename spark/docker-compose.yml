@@ -28,3 +28,10 @@ sparkslave:
     - "8081:8081"
     - "4040:4040"
   command: "/start.sh slave"
+
+sparkcron:
+  image: "farismosman/cron"
+  container_name: sparkcron
+  hostname: sparkcron
+  net: pionetwork
+  env_file: .cron-env

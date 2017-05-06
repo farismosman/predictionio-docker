@@ -1,0 +1,4 @@
+SERVICE_NAME=ur
+SSH_PASSWD=screencast
+CRON_COMMAND='/path/to/job.sh'
+INTERVAL=30
