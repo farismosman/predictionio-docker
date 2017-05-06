@@ -1,8 +1,0 @@
-urengine:
-  image: farismosman/urengine
-  container_name: urengine
-  net: "pionetwork"
-  env_file: .env
-  ports:
-    - 8000:8000
-    - 7070:7070
