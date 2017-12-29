@@ -12,15 +12,13 @@ RUN rm -f spark-1.6.3-bin-hadoop2.6.tgz
 
 RUN ln -s /opt/spark /usr/local/spark
 
+ENV SPARK_HOME '/usr/local/spark'
+
 ADD start.sh /start.sh
 RUN chmod +x  /start.sh
 
-# exposing ports to access the Spark master UI
-EXPOSE 8080 7077 8888 8081 4040 7001 7002 7003 7004 7005 7006
-
-ENV SPARK_HOME '/usr/local/spark'
-
-RUN env > /etc/environment
+# clean up
+RUN apt-get remove -y wget
 
 # default command: running an interactive spark shell in the local mode
 CMD ["/opt/spark/bin/spark-shell", "--master", "local[*]"]
