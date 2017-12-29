@@ -6,7 +6,5 @@ cp -r /etc/config/spark/*.conf /opt/spark/conf/
 cp /etc/config/spark/cleanup.sh /cleanup.sh
 chmod +x /cleanup.sh
 
-service ssh restart
-
 # $1 is either master or slave
 /usr/bin/supervisord --configuration=/opt/spark/conf/$1.conf

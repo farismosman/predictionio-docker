@@ -1,5 +1,5 @@
 config:
-  image: "farismosman/config"
+  image: "farismosman/config:0.9.7"
   container_name: config
   volumes:
     - /tmp/config:/etc/config
@@ -13,7 +13,7 @@ sparkmaster:
   volumes:
     - /tmp/config/spark:/etc/config/spark
   ports:
-    - "8080:8080"
+    - "8082:8080"
   command: "/start.sh master"
 
 sparkslave:
@@ -28,10 +28,3 @@ sparkslave:
     - "8081:8081"
     - "4040:4040"
   command: "/start.sh slave"
-
-sparkcron:
-  image: "farismosman/cron"
-  container_name: sparkcron
-  hostname: sparkcron
-  net: pionetwork
-  env_file: .cron-env
