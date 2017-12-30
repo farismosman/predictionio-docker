@@ -1,5 +1,5 @@
 
-FROM openjdk:8-jre-slim
+FROM openjdk:8-jdk-slim
 
 # install supervisor
 RUN apt-get update && apt-get install -y supervisor wget
