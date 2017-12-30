@@ -1,17 +1,9 @@
-config:
-  image: "farismosman/config:0.9.7"
-  container_name: config
-  volumes:
-    - /tmp/config:/etc/config
-
 sparkmaster:
   image: "farismosman/spark:1.6.3"
   container_name: sparkmaster
   hostname: sparkmaster
-  env_file: .master-env
+  env_file: master.env
   net: pionetwork
-  volumes:
-    - /tmp/config/spark:/etc/config/spark
   ports:
     - "8082:8080"
   command: "/start.sh master"
@@ -20,10 +12,8 @@ sparkslave:
   image: "farismosman/spark:1.6.3"
   container_name: sparkslave
   hostname: sparkslave
-  env_file: .slave-env
+  env_file: slave.env
   net: pionetwork
-  volumes:
-    - /tmp/config/spark:/etc/config/spark
   ports:
     - "8081:8081"
     - "4040:4040"
