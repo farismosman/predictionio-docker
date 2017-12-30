@@ -1,5 +1,5 @@
 config:
-  image: "farismosman/config"
+  image: "farismosman/predictionio-config"
   container_name: config
   volumes:
     - /mnt/config:/etc/config

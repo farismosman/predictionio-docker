@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+export PIO_HOME="$(cd `dirname $0`/..; pwd)"
+
+. ${PIO_HOME}/bin/load-pio-env.sh
+
+echo "Starting PredictionIO Event Server..."
+${PIO_HOME}/bin/pio-daemon ${PIO_HOME}/eventserver.pid eventserver --ip 0.0.0.0
